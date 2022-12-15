@@ -696,3 +696,51 @@ NO
 
 
 # print(number_is_valid(input()))
+
+
+#  _____________________________________________________________________________
+
+
+"""
+                            Merge two sorted lists
+Напишите функцию merge(list1, list2), которая принимает в качестве аргументов
+два отсортированных по возрастанию списка, состоящих из целых чисел, и
+объединяет их в один отсортированный список.
+Примечание 1. Списки list1 и list2 могут иметь разную длину.
+Примечание 2. Можно использовать списочный метод sort(), а можно обойтись
+и без него.
+Следующий программный код:
+print(merge([1, 2, 3], [5, 6, 7, 8]))
+print(merge([1, 7, 10, 16], [5, 6, 13, 20]))
+
+должен выводить:
+[1, 2, 3, 5, 6, 7, 8]
+[1, 5, 6, 7, 10, 13, 16, 20]
+"""
+# Сортировка слиянием
+# Решение объединения и сортировки отсортированных списков в один проход
+# Работает очень быстро. Сравнимо с встоенной функцией sorted()
+# Первая фунция объединяет два списка. Вторая, используя первую, объединяет
+# любое количество списков:
+
+# def merge_two_lists(list1, list2):
+#     merged_list = []
+#     i1, i2, = 0, 0
+#     len1, len2 = len(list1), len(list2)
+#     while i1 < len1 and i2 < len2:
+#         if list1[i1] < list2[i2]:
+#             merged_list.append(list1[i1])
+#             i1 += 1
+#         else:
+#             merged_list.append(list2[i2])
+#             i2 += 1
+#     merged_list += list1[i1:] + list2[i2:]
+#     return merged_list
+
+
+# def merge_multiple_lists():
+#     merged_list = []
+#     for _ in range(int(input())):
+#         current_list = [int(s) for s in input().split()]
+#         merged_list = merge_two_lists(current_list, merged_list)
+#     return merged_list
