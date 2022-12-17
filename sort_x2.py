@@ -1,7 +1,7 @@
 """Квадратичные функции сортировки"""
 
 
-def choise_sort(lst):
+def choise_sort(lst: list) -> list:
     """Сортировка списка А выбором"""
     n = len(lst)
     for pos in range(n - 1):
@@ -10,7 +10,7 @@ def choise_sort(lst):
                 lst[pos], lst[k] = lst[k], lst[pos]
 
 
-def bubble_sort(lst):
+def bubble_sort(lst: list) -> list:
     """Cортировка списка А пузырьками"""
     n = len(lst)
 
@@ -29,7 +29,7 @@ def bubble_sort(lst):
                 lst[k], lst[k + 1] = lst[k + 1], lst[k]
 
 
-def insert_sort(lst):
+def insert_sort(lst: list) -> list:
     """Сортировка списка А вставками"""
     n = len(lst)
 

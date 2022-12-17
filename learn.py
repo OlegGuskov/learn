@@ -9,6 +9,7 @@
 
 # import random
 
+
 """
     привет!
            /> - フ
@@ -27,29 +28,31 @@
 
 # Тесты функций
 
-# def test_merge(func_merge):
 
-#     print()
-#     print(f'testing:  {func_merge.__doc__}', end='\n\n')
+def testing_function(func):
 
-#     print('testcase 1', end=' ')
-#     list1 = sorted([random.randint(-99, 99) for _ in range(10000)])
-#     list2 = sorted([random.randint(-99, 99) for _ in range(10000)])
-#     # print(list1, list2, sep='\n')
-#     lst_sorted = sorted(list1 + list2)
-#     func_merge(list1, list2)
-#     print('OK!' if list1 == lst_sorted else f'''Fail!  {list1}
-#          {lst_sorted}''')
+    print()
+    print(f'Testing:  {func.__doc__}', end='\n\n')
 
-#     print('testcase 2', end=' ')
-#     list1 = sorted([random.randint(-99, 99) for _ in range(1000000)])
-#     list2 = sorted([random.randint(-99, 99) for _ in range(1000000)])
-#     # print(list1, list2, sep='\n')
-#     lst_sorted = sorted(list1 + list2)
-#     merged = func_merge(list1, list2)
-#     print('OK!' if merged == lst_sorted else f'''Fail!  {list1}
-#          {lst_sorted}''')
+    ref = 0
 
-# test_merge(merge)
-# test_merge(quick_merge)
-# test_merge(supre_merge)
+    # print('testcase 1', end='   ')
+    print('testcase 1', end='\n\n')
+    for key, value in ref.items():
+        print(f'"{key}"', end='   ')
+        result = f'{func(key)}'
+        print(f'{result} OK!' if result == value else f'''Fail!
+    reseived:{result} expected:{value}''')
+
+#     # print('testcase 2', end='   ')
+#     print('testcase 2', end='\n\n')
+#     for n in range(1, 18):
+#         print(f'"{str(n)}"', end='   ')
+#         result = func(n)
+#         print(f'{result} OK!' if r_list[r_list.index(result) - 1] <= n else
+#               f'''Fail! There is a result less than {result}''')
+
+
+# if __name__ == '__main__':
+#     testing_function(is_password_good)
+#     print(clean_dict)

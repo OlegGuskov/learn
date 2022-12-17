@@ -744,3 +744,91 @@ print(merge([1, 7, 10, 16], [5, 6, 13, 20]))
 #         current_list = [int(s) for s in input().split()]
 #         merged_list = merge_two_lists(current_list, merged_list)
 #     return merged_list
+
+
+#  _____________________________________________________________________________
+
+
+""" https://stepik.org/lesson/334150/step/4
+
+                            Next Prime 🌶️🌶️
+Напишите функцию get_next_prime(num), которая принимает в качестве аргумента
+натуральное число num и возвращает первое простое число большее числа num.
+"""
+
+
+# def is_prime(num):
+#     if num == 1:
+#         return False
+#     for i in range(2, int(num ** 0.5) + 1):
+#         if num % i == 0:
+#             return False
+#     return True
+
+
+# def get_next_prime(num):  # Вариант с циклом
+#     ""
+#     result = num + 1
+#     while not is_prime(result):
+#         result += 1
+#     return result
+
+
+# def get_next_prime(num):  # Вариант с рекурсией
+#     ""
+#     result = num + 1
+#     if is_prime(result):
+#         return result
+#     else:
+#         return get_next_prime(result)
+
+
+#  _____________________________________________________________________________
+
+
+""" https://stepik.org/lesson/334150/step/5
+                            Good password 🌶️
+Напишите функцию is_password_good(password), которая принимает в качестве
+аргумента строковое значение пароля password и возвращает значение True если
+пароль является надежным и False в противном случае.
+
+Пароль является надежным если:
+он состоит из цифр, заглавных и строчных букв
+его длина не менее 8 символов;
+он содержит как минимум одну заглавную букву (верхний регистр);
+он содержит как минимум одну строчную букву (нижний регистр);
+он содержит хотя бы одну цифру.
+
+Тестовые данные:
+1	aaAA12qqp	    True
+2	aa13AN	        False
+3	aaaaaaaaaaaaa	False
+4	AAAAAAAAAAA	    False
+5	734638763978653	False
+6	AAPPqq9S	    True
+7	AABBccssss	    False
+8	AA23423423	    False
+9	dsas233232232	False
+10	99yyPPgg	    True
+11	99yyPPg	        False
+12	()+_№;%:	    False
+13	aaaaaaA@	    False
+14  aabbCC11OP      True
+15  abC1pu          False
+"""
+
+
+def is_password_good(password: str) -> bool:
+    "this function checks the strength of the entered password"
+    if (len(password) < 8 or not
+            password.isalnum() or
+            password.isalpha() or
+            password.isdigit() or
+            password.islower() or
+            password.isupper()):
+        return False
+    else:
+        return True
+
+
+#  _____________________________________________________________________________
