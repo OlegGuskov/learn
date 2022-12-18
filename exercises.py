@@ -818,17 +818,97 @@ print(merge([1, 7, 10, 16], [5, 6, 13, 20]))
 """
 
 
-def is_password_good(password: str) -> bool:
-    "this function checks the strength of the entered password"
-    if (len(password) < 8 or not
-            password.isalnum() or
-            password.isalpha() or
-            password.isdigit() or
-            password.islower() or
-            password.isupper()):
-        return False
-    else:
-        return True
+# def is_password_good(password: str) -> bool:
+#     "this function checks the strength of the entered password"
+#     if (len(password) < 8 or not
+#             password.isalnum() or
+#             password.isalpha() or
+#             password.isdigit() or
+#             password.islower() or
+#             password.isupper()):
+#         return False
+#     else:
+#         return True
+
+
+#  _____________________________________________________________________________
+
+
+
+""" https://stepik.org/lesson/334150/step/7
+                            Палиндром 🌶️
+Напишите функцию is_palindrome(text), которая принимает в качестве аргумента
+строку text и возвращает значение True если указанный текст является
+палиндромом и False в противном случае.
+
+При проверке считайте большие и маленькие буквы одинаковыми,
+а также игнорируйте пробелы, а также символы , . ! ? -.
+
+Тестовые данные
+1	Standart - smallest, sell Amstrad nats.	                                True
+2	Zoo belt to be Russia, is sure bottle booz.	                            True
+3	Evil fit some kill like me, kill like most, if live.	                True
+4	Do me?.. Kill I victim? Must summit civil like mod.	                    True
+5	Карман, жена, но Какашкин - вор! О, Ковалева... Вела во коровник.
+    Ша! Как она нежна! рак...	                                           False
+6	Зело полз Антипарх то вино пить - тип он и вот храпит - на зло полез	True
+7	Марс близ Овна. На базар генерал в ларе негра за банан возил б. Срам!	True
+8	Тер жен, а нес токмо радение о бодром мордобое, и недаром кот сена
+    не жрет.	                                                            True
+9	Тер жен, а нес токмо недаром кот сена не жрет.	                       False
+10	sjdflksjflksdjflsdjk sdlfhsdjfE#R#$$#R !!!!! sdjfnsdjkfnsd
+ kjcvadsk	                                                               False
+"""
+
+
+# def ordering_text(text):  # Variant 1
+#     return (text.lower().replace(' ', '').replace(',', '')
+#                         .replace('.', '').replace('!', '')
+#                         .replace('?', '').replace('-', ''))
+
+
+# def ordering_text(text):  # Variant 2
+#     return ''.join([c.lower() for c in text if c not in ' ,.!?-'])
+
+
+# def is_palindrome(text):
+#     return ordering_text(text) == ordering_text(text)[::-1]
+
+
+#  _____________________________________________________________________________
+
+
+""" https://stepik.org/lesson/334150/step/9
+                Правильная скобочная последовательность 🌶️
+Напишите функцию is_correct_bracket(text), которая принимает в качестве
+аргумента непустую строку text, состоящую из символов '(' и ')' и возвращает
+значение True если поступившая на вход строка является правильной скобочной
+последовательностью и False в противном случае.
+Правильной скобочной последовательностью называется строка,
+состоящая только из символов '(' и ')', где каждой открывающей скобке
+найдется парная закрывающая скобка.
+"""
+
+# Variant 1
+
+def is_correct_bracket0(text: str):
+    counter = 0
+    for c in text:
+        if c == '(':
+            counter += 1
+        else:
+            counter -= 1
+        if counter < 0:
+            return False
+    return not counter
+
+# Variant 2
+
+def is_correct_bracket(text: str):
+    string = text
+    while "()" in string:
+        string = string.replace('()', '')
+    return not string
 
 
 #  _____________________________________________________________________________
