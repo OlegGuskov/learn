@@ -891,6 +891,7 @@ print(merge([1, 7, 10, 16], [5, 6, 13, 20]))
 
 # Variant 1
 
+
 def is_correct_bracket0(text: str):
     counter = 0
     for c in text:
@@ -904,11 +905,27 @@ def is_correct_bracket0(text: str):
 
 # Variant 2
 
+
 def is_correct_bracket(text: str):
     string = text
     while "()" in string:
         string = string.replace('()', '')
     return not string
+
+
+#  _____________________________________________________________________________
+
+"""
+Напишите функцию convert_to_python_case(text), которая принимает в качестве
+аргумента строку в «верблюжьем регистре» и преобразует его в «змеиный регистр».
+"""
+
+
+def convert_to_python_case(text: str):
+    result = text[0].lower()
+    for c in text[1:]:
+        result += '_' + c.lower() if c.lower() else c
+    return result
 
 
 #  _____________________________________________________________________________
